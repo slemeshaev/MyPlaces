@@ -6,10 +6,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Root View Controller-->
         <scene sceneID="Aed-Us-BlS">
             <objects>
-                <tableViewController id="th4-KO-jZC" customClass="MainViewController" customModule="MyPlaces" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Root View Controller" id="th4-KO-jZC" customClass="MainViewController" customModule="MyPlaces" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pPo-zZ-LGi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,7 +29,7 @@
                             <outlet property="delegate" destination="th4-KO-jZC" id="IiO-c1-Mte"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="que-kB-Vhh"/>
+                    <navigationItem key="navigationItem" title="My Places" id="que-kB-Vhh"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I4W-26-ZRE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -42,6 +42,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gLB-Nq-3gu">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="30"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="th4-KO-jZC" kind="relationship" relationship="rootViewController" id="otZ-dN-644"/>
