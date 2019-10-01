@@ -14,6 +14,7 @@
 		668FB93023413B54006C70A1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668FB92F23413B54006C70A1 /* MainViewController.swift */; };
 		66DF0CA7234368A600EA2852 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66DF0CA6234368A600EA2852 /* Main.storyboard */; };
 		66DF0CA923436BAF00EA2852 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DF0CA823436BAF00EA2852 /* CustomTableViewCell.swift */; };
+		66DF0CAB23437D4200EA2852 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DF0CAA23437D4200EA2852 /* PlaceModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		668FB92F23413B54006C70A1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		66DF0CA6234368A600EA2852 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		66DF0CA823436BAF00EA2852 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		66DF0CAA23437D4200EA2852 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				668FB91D23413AB4006C70A1 /* SceneDelegate.swift */,
 				668FB92F23413B54006C70A1 /* MainViewController.swift */,
 				66DF0CA823436BAF00EA2852 /* CustomTableViewCell.swift */,
+				66DF0CAA23437D4200EA2852 /* PlaceModel.swift */,
 				66DF0CA6234368A600EA2852 /* Main.storyboard */,
 				668FB92423413AB5006C70A1 /* Assets.xcassets */,
 				668FB92623413AB5006C70A1 /* LaunchScreen.storyboard */,
@@ -143,6 +146,7 @@
 			files = (
 				668FB93023413B54006C70A1 /* MainViewController.swift in Sources */,
 				668FB91C23413AB4006C70A1 /* AppDelegate.swift in Sources */,
+				66DF0CAB23437D4200EA2852 /* PlaceModel.swift in Sources */,
 				66DF0CA923436BAF00EA2852 /* CustomTableViewCell.swift in Sources */,
 				668FB91E23413AB4006C70A1 /* SceneDelegate.swift in Sources */,
 			);

@@ -7,3 +7,28 @@
 //
 
 import Foundation
+
+struct Place {
+    
+    var name: String
+    var location: String
+    var type: String
+    var image: String
+    
+    static let restaurantNames = [
+        "Burger Heroes", "Kitchen", "Bonsai",
+        "Балкан Гриль", "Вкусные истории",
+        "Пятница", "Классик", "Шок", "Бочка"
+    ]
+    
+    static func getPlaces() -> [Place] {
+        var places = [Place]()
+        
+        for place in restaurantNames {
+            places.append(Place(name: place, location: "Москва", type: "Ресторан", image: place))
+        }
+        
+        return places
+    }
+    
+}
