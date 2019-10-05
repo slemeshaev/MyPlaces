@@ -268,7 +268,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="My Places" largeTitleDisplayMode="never" id="8wM-Ie-8F8">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="AZ" id="OQz-M6-YA5"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="VfS-DA-lf8"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="VfS-DA-lf8">
+                            <connections>
+                                <segue destination="bMw-aH-rQB" kind="presentation" id="zvI-A3-qr8"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="QXo-Ou-zgE" id="mmu-RI-xK6"/>
@@ -303,7 +307,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bMw-aH-rQB" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Btd-Az-7GW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -313,7 +317,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ui-eE-Ape" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="990" y="-627"/>
+            <point key="canvasLocation" x="990" y="-618"/>
         </scene>
     </scenes>
     <resources>
