@@ -14,6 +14,7 @@
 		668FB92523413AB5006C70A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 668FB92423413AB5006C70A1 /* Assets.xcassets */; };
 		668FB92823413AB5006C70A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 668FB92623413AB5006C70A1 /* LaunchScreen.storyboard */; };
 		668FB93023413B54006C70A1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668FB92F23413B54006C70A1 /* MainViewController.swift */; };
+		66AEA611235B22A6003AE9B9 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AEA610235B22A6003AE9B9 /* RatingControl.swift */; };
 		66DF0CA7234368A600EA2852 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66DF0CA6234368A600EA2852 /* Main.storyboard */; };
 		66DF0CA923436BAF00EA2852 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DF0CA823436BAF00EA2852 /* CustomTableViewCell.swift */; };
 		66DF0CAB23437D4200EA2852 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DF0CAA23437D4200EA2852 /* PlaceModel.swift */; };
@@ -31,6 +32,7 @@
 		668FB92723413AB5006C70A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		668FB92923413AB5006C70A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		668FB92F23413B54006C70A1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		66AEA610235B22A6003AE9B9 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		66DF0CA6234368A600EA2852 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		66DF0CA823436BAF00EA2852 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		66DF0CAA23437D4200EA2852 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				668FB92F23413B54006C70A1 /* MainViewController.swift */,
 				66DF0CAC2343A4EE00EA2852 /* NewPlaceViewController.swift */,
 				66DF0CA823436BAF00EA2852 /* CustomTableViewCell.swift */,
+				66AEA610235B22A6003AE9B9 /* RatingControl.swift */,
 				66DF0CAA23437D4200EA2852 /* PlaceModel.swift */,
 				665F1D4A234680EE007B0C25 /* StorageManager.swift */,
 				66DF0CA6234368A600EA2852 /* Main.storyboard */,
@@ -221,6 +224,7 @@
 				66DF0CAD2343A4EE00EA2852 /* NewPlaceViewController.swift in Sources */,
 				668FB91C23413AB4006C70A1 /* AppDelegate.swift in Sources */,
 				665F1D4B234680EE007B0C25 /* StorageManager.swift in Sources */,
+				66AEA611235B22A6003AE9B9 /* RatingControl.swift in Sources */,
 				66DF0CAB23437D4200EA2852 /* PlaceModel.swift in Sources */,
 				66DF0CA923436BAF00EA2852 /* CustomTableViewCell.swift in Sources */,
 				668FB91E23413AB4006C70A1 /* SceneDelegate.swift in Sources */,
