@@ -154,13 +154,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Gme-QE-qHg" customClass="RatingControl" customModule="MyPlaces" customModuleProvider="target">
+                                                <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="252" placeholderIntrinsicHeight="44" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Gme-QE-qHg" customClass="RatingControl" customModule="MyPlaces" customModuleProvider="target">
                                                     <rect key="frame" x="81" y="48" width="252" height="44"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="starCount">
-                                                            <integer key="value" value="5"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
@@ -221,7 +216,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="d1F-FP-7vs">
-                                <rect key="frame" x="0.0" y="120" width="414" height="742"/>
+                                <rect key="frame" x="0.0" y="120" width="414" height="776"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="85" id="a6Q-Xl-yfv" customClass="CustomTableViewCell" customModule="MyPlaces" customModuleProvider="target">
@@ -290,7 +285,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="d1F-FP-7vs" firstAttribute="bottom" secondItem="MTF-Ak-Jhx" secondAttribute="bottom" id="6sz-yf-VaM"/>
+                            <constraint firstItem="d1F-FP-7vs" firstAttribute="bottom" secondItem="08B-OU-Whj" secondAttribute="bottom" id="6sz-yf-VaM"/>
                             <constraint firstItem="mXJ-Yi-EiC" firstAttribute="leading" secondItem="MTF-Ak-Jhx" secondAttribute="leading" id="7Wx-mC-oeL"/>
                             <constraint firstItem="d1F-FP-7vs" firstAttribute="top" secondItem="mXJ-Yi-EiC" secondAttribute="bottom" constant="1" id="8NH-79-HdY"/>
                             <constraint firstItem="mXJ-Yi-EiC" firstAttribute="trailing" secondItem="MTF-Ak-Jhx" secondAttribute="trailing" id="XsF-4k-k0h"/>
