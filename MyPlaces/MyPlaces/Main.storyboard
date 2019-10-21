@@ -29,6 +29,17 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addphoto" translatesAutoresizingMaskIntoConstraints="NO" id="P4R-hv-yo2">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJu-e4-9TI">
+                                                    <rect key="frame" x="344" y="189" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="PFL-Ou-5jb"/>
+                                                        <constraint firstAttribute="height" constant="50" id="Rns-kr-1mw"/>
+                                                    </constraints>
+                                                    <state key="normal" image="map" backgroundImage="map"/>
+                                                    <connections>
+                                                        <segue destination="nXa-L2-mLK" kind="presentation" identifier="showMap" id="VgF-MJ-PBT"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -36,6 +47,8 @@
                                                 <constraint firstAttribute="trailing" secondItem="P4R-hv-yo2" secondAttribute="trailing" id="9wg-Nn-JNb"/>
                                                 <constraint firstAttribute="bottom" secondItem="P4R-hv-yo2" secondAttribute="bottom" id="AGa-u8-sNw"/>
                                                 <constraint firstItem="P4R-hv-yo2" firstAttribute="leading" secondItem="hg9-kQ-dbU" secondAttribute="leading" id="Tdn-Uo-92u"/>
+                                                <constraint firstItem="VJu-e4-9TI" firstAttribute="bottom" secondItem="hg9-kQ-dbU" secondAttribute="bottomMargin" id="dMv-Qo-nKd"/>
+                                                <constraint firstItem="VJu-e4-9TI" firstAttribute="trailing" secondItem="hg9-kQ-dbU" secondAttribute="trailingMargin" id="v1o-ex-V0e"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -197,6 +210,46 @@
                 <exit id="ilG-N1-itG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="991" y="167"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="VQF-Kl-94V">
+            <objects>
+                <viewController id="nXa-L2-mLK" customClass="MapViewController" customModule="MyPlaces" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0aY-HT-vOo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="UG4-0u-PT4">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJ3-YQ-Rop">
+                                <rect key="frame" x="344" y="40" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="BLl-DP-iQy"/>
+                                    <constraint firstAttribute="height" constant="30" id="o3a-7V-mBK"/>
+                                </constraints>
+                                <state key="normal" image="camcel"/>
+                                <connections>
+                                    <action selector="closeVC" destination="nXa-L2-mLK" eventType="touchUpInside" id="0N4-GQ-8R5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="UG4-0u-PT4" firstAttribute="leading" secondItem="9tO-I2-txv" secondAttribute="leading" id="203-mW-13L"/>
+                            <constraint firstItem="9tO-I2-txv" firstAttribute="trailing" secondItem="jJ3-YQ-Rop" secondAttribute="trailing" constant="40" id="6tB-IJ-hxS"/>
+                            <constraint firstItem="UG4-0u-PT4" firstAttribute="trailing" secondItem="9tO-I2-txv" secondAttribute="trailing" id="A3Q-Ku-3v3"/>
+                            <constraint firstAttribute="bottom" secondItem="UG4-0u-PT4" secondAttribute="bottom" id="R9b-pL-vfu"/>
+                            <constraint firstItem="UG4-0u-PT4" firstAttribute="top" secondItem="0aY-HT-vOo" secondAttribute="top" id="axB-u8-xQq"/>
+                            <constraint firstItem="jJ3-YQ-Rop" firstAttribute="top" secondItem="9tO-I2-txv" secondAttribute="top" constant="40" id="upS-0M-5Ba"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9tO-I2-txv"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="I6o-fK-s9O"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gUf-vd-rN3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1902.8985507246377" y="166.74107142857142"/>
         </scene>
         <!--My Places-->
         <scene sceneID="fSg-Nu-8zw">
@@ -373,6 +426,8 @@
     <resources>
         <image name="AZ" width="25" height="25"/>
         <image name="addphoto" width="518.5" height="431.5"/>
+        <image name="camcel" width="128" height="128"/>
+        <image name="map" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="GiE-Cq-OfK"/>

@@ -20,6 +20,7 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var ratingView: RatingControl! {
         didSet {
+            // Проблема с багом не решена 
             //ratingView.settings.updateOnTouch = false
         }
     }
