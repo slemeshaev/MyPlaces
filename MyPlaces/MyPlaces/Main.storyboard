@@ -236,14 +236,27 @@
                                     <action selector="closeVC" destination="nXa-L2-mLK" eventType="touchUpInside" id="0N4-GQ-8R5"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dNe-ni-4It">
+                                <rect key="frame" x="324" y="718" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="5fd-Xe-97S"/>
+                                    <constraint firstAttribute="width" constant="50" id="P02-hf-1Kq"/>
+                                </constraints>
+                                <state key="normal" image="location"/>
+                                <connections>
+                                    <action selector="centerViewInUserLocation" destination="nXa-L2-mLK" eventType="touchUpInside" id="tpa-aD-eC0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="UG4-0u-PT4" firstAttribute="leading" secondItem="9tO-I2-txv" secondAttribute="leading" id="203-mW-13L"/>
                             <constraint firstItem="9tO-I2-txv" firstAttribute="trailing" secondItem="jJ3-YQ-Rop" secondAttribute="trailing" constant="40" id="6tB-IJ-hxS"/>
                             <constraint firstItem="UG4-0u-PT4" firstAttribute="trailing" secondItem="9tO-I2-txv" secondAttribute="trailing" id="A3Q-Ku-3v3"/>
+                            <constraint firstItem="9tO-I2-txv" firstAttribute="trailing" secondItem="dNe-ni-4It" secondAttribute="trailing" constant="40" id="Ek3-Pv-sCI"/>
                             <constraint firstAttribute="bottom" secondItem="UG4-0u-PT4" secondAttribute="bottom" id="R9b-pL-vfu"/>
                             <constraint firstItem="UG4-0u-PT4" firstAttribute="top" secondItem="0aY-HT-vOo" secondAttribute="top" id="axB-u8-xQq"/>
+                            <constraint firstItem="9tO-I2-txv" firstAttribute="bottom" secondItem="dNe-ni-4It" secondAttribute="bottom" constant="40" id="rqx-Sc-cbn"/>
                             <constraint firstItem="jJ3-YQ-Rop" firstAttribute="top" secondItem="9tO-I2-txv" secondAttribute="top" constant="40" id="upS-0M-5Ba"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9tO-I2-txv"/>
@@ -433,6 +446,7 @@
         <image name="AZ" width="25" height="25"/>
         <image name="addphoto" width="518.5" height="431.5"/>
         <image name="camcel" width="128" height="128"/>
+        <image name="location" width="256" height="256"/>
         <image name="map" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
