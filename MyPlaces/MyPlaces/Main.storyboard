@@ -327,6 +327,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="fM5-Fn-7Fu" firstAttribute="centerY" secondItem="bd8-wG-HYM" secondAttribute="centerY" id="0te-hP-RwK"/>
+                                                <constraint firstItem="fM5-Fn-7Fu" firstAttribute="leading" secondItem="kFv-Kh-vZf" secondAttribute="trailing" constant="8" id="8Bh-IT-Jrv"/>
                                                 <constraint firstItem="kFv-Kh-vZf" firstAttribute="leading" secondItem="vX0-wY-nxI" secondAttribute="trailing" constant="16" id="BJ8-Ny-xLp"/>
                                                 <constraint firstAttribute="trailing" secondItem="fM5-Fn-7Fu" secondAttribute="trailing" constant="8" id="DSF-9i-RRr"/>
                                                 <constraint firstItem="vX0-wY-nxI" firstAttribute="centerY" secondItem="bd8-wG-HYM" secondAttribute="centerY" id="QKC-dn-hsH"/>
@@ -335,7 +336,6 @@
                                                 <constraint firstItem="vX0-wY-nxI" firstAttribute="leading" secondItem="bd8-wG-HYM" secondAttribute="leading" constant="16" id="g1U-xo-Z0p"/>
                                                 <constraint firstAttribute="bottom" secondItem="kFv-Kh-vZf" secondAttribute="bottom" constant="8" id="sVB-gJ-awc"/>
                                                 <constraint firstItem="kFv-Kh-vZf" firstAttribute="top" secondItem="bd8-wG-HYM" secondAttribute="top" constant="8" id="t1W-7L-cO6"/>
-                                                <constraint firstItem="fM5-Fn-7Fu" firstAttribute="leading" secondItem="kFv-Kh-vZf" secondAttribute="trailing" constant="8" id="yUj-Ke-gIJ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
