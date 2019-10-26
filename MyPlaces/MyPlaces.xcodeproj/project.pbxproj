@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0EB0EDE0FD8418C6A2E35AB7 /* Pods_MyPlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3782DAEF1E2CEF7DF52DDAD4 /* Pods_MyPlaces.framework */; };
 		661CE739235E30BD00976967 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661CE738235E30BD00976967 /* MapViewController.swift */; };
+		665F09B02364D112001093A6 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665F09AF2364D112001093A6 /* MapManager.swift */; };
 		665F1D4B234680EE007B0C25 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665F1D4A234680EE007B0C25 /* StorageManager.swift */; };
 		668FB91C23413AB4006C70A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668FB91B23413AB4006C70A1 /* AppDelegate.swift */; };
 		668FB91E23413AB4006C70A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668FB91D23413AB4006C70A1 /* SceneDelegate.swift */; };
@@ -26,6 +27,7 @@
 		3782DAEF1E2CEF7DF52DDAD4 /* Pods_MyPlaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyPlaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		566FDA02B66CD97AB7D19252 /* Pods-MyPlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlaces.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyPlaces/Pods-MyPlaces.release.xcconfig"; sourceTree = "<group>"; };
 		661CE738235E30BD00976967 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		665F09AF2364D112001093A6 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 		665F1D4A234680EE007B0C25 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		668FB91823413AB4006C70A1 /* MyPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		668FB91B23413AB4006C70A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,55 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		665F09B12364E94A001093A6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				668FB92F23413B54006C70A1 /* MainViewController.swift */,
+				66DF0CAC2343A4EE00EA2852 /* NewPlaceViewController.swift */,
+				661CE738235E30BD00976967 /* MapViewController.swift */,
+				66DF0CA823436BAF00EA2852 /* CustomTableViewCell.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		665F09B22364E981001093A6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				66DF0CAA23437D4200EA2852 /* PlaceModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		665F09B32364E9AC001093A6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				665F09AF2364D112001093A6 /* MapManager.swift */,
+				665F1D4A234680EE007B0C25 /* StorageManager.swift */,
+				66AEA610235B22A6003AE9B9 /* RatingControl.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		665F09B42364E9DD001093A6 /* Support files */ = {
+			isa = PBXGroup;
+			children = (
+				668FB91B23413AB4006C70A1 /* AppDelegate.swift */,
+				668FB91D23413AB4006C70A1 /* SceneDelegate.swift */,
+				668FB92423413AB5006C70A1 /* Assets.xcassets */,
+				668FB92923413AB5006C70A1 /* Info.plist */,
+			);
+			path = "Support files";
+			sourceTree = "<group>";
+		};
+		665F09B52364EA24001093A6 /* IBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				66DF0CA6234368A600EA2852 /* Main.storyboard */,
+				668FB92623413AB5006C70A1 /* LaunchScreen.storyboard */,
+			);
+			path = IBuilder;
+			sourceTree = "<group>";
+		};
 		668FB90F23413AB4006C70A1 = {
 			isa = PBXGroup;
 			children = (
@@ -83,19 +134,11 @@
 		668FB91A23413AB4006C70A1 /* MyPlaces */ = {
 			isa = PBXGroup;
 			children = (
-				668FB91B23413AB4006C70A1 /* AppDelegate.swift */,
-				668FB91D23413AB4006C70A1 /* SceneDelegate.swift */,
-				668FB92F23413B54006C70A1 /* MainViewController.swift */,
-				66DF0CAC2343A4EE00EA2852 /* NewPlaceViewController.swift */,
-				66DF0CA823436BAF00EA2852 /* CustomTableViewCell.swift */,
-				66AEA610235B22A6003AE9B9 /* RatingControl.swift */,
-				661CE738235E30BD00976967 /* MapViewController.swift */,
-				66DF0CAA23437D4200EA2852 /* PlaceModel.swift */,
-				665F1D4A234680EE007B0C25 /* StorageManager.swift */,
-				66DF0CA6234368A600EA2852 /* Main.storyboard */,
-				668FB92423413AB5006C70A1 /* Assets.xcassets */,
-				668FB92623413AB5006C70A1 /* LaunchScreen.storyboard */,
-				668FB92923413AB5006C70A1 /* Info.plist */,
+				665F09B12364E94A001093A6 /* ViewControllers */,
+				665F09B32364E9AC001093A6 /* Helpers */,
+				665F09B22364E981001093A6 /* Models */,
+				665F09B42364E9DD001093A6 /* Support files */,
+				665F09B52364EA24001093A6 /* IBuilder */,
 			);
 			path = MyPlaces;
 			sourceTree = "<group>";
@@ -229,6 +272,7 @@
 				665F1D4B234680EE007B0C25 /* StorageManager.swift in Sources */,
 				661CE739235E30BD00976967 /* MapViewController.swift in Sources */,
 				66AEA611235B22A6003AE9B9 /* RatingControl.swift in Sources */,
+				665F09B02364D112001093A6 /* MapManager.swift in Sources */,
 				66DF0CAB23437D4200EA2852 /* PlaceModel.swift in Sources */,
 				66DF0CA923436BAF00EA2852 /* CustomTableViewCell.swift in Sources */,
 				668FB91E23413AB4006C70A1 /* SceneDelegate.swift in Sources */,
@@ -370,7 +414,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = MyPlaces/Info.plist;
+				INFOPLIST_FILE = "MyPlaces/Support files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -389,7 +433,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = MyPlaces/Info.plist;
+				INFOPLIST_FILE = "MyPlaces/Support files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
