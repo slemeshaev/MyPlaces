@@ -123,7 +123,7 @@
                                                     </constraints>
                                                     <state key="normal" backgroundImage="Placeholder"/>
                                                     <connections>
-                                                        <segue destination="nXa-L2-mLK" kind="presentation" identifier="getAdress" id="5MU-N1-XK8"/>
+                                                        <segue destination="nXa-L2-mLK" kind="presentation" identifier="getAddress" id="5MU-N1-XK8"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -256,7 +256,7 @@
                                     <constraint firstAttribute="width" constant="40" id="Ujh-1M-2D7"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Adress" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Dz8-9c-aHS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Dz8-9c-aHS">
                                 <rect key="frame" x="20" y="130" width="374" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
@@ -306,7 +306,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="I6o-fK-s9O"/>
                     <connections>
-                        <outlet property="adressLabel" destination="Dz8-9c-aHS" id="Hih-sc-Q1b"/>
+                        <outlet property="addressLabel" destination="Dz8-9c-aHS" id="Hih-sc-Q1b"/>
                         <outlet property="doneButton" destination="zVg-Wp-yZw" id="E4P-3i-6Tp"/>
                         <outlet property="mapPinImage" destination="8oB-QP-Wuk" id="eMa-pX-QBX"/>
                         <outlet property="mapView" destination="UG4-0u-PT4" id="EFy-nt-QDS"/>
@@ -499,7 +499,7 @@
         <image name="map" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VgF-MJ-PBT"/>
+        <segue reference="5MU-N1-XK8"/>
         <segue reference="GiE-Cq-OfK"/>
     </inferredMetricsTieBreakers>
 </document>
