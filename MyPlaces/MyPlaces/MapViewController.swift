@@ -162,6 +162,7 @@ class MapViewController: UIViewController {
         
         guard let request = createDirectionRequest(from: location) else {
             showAlert(title: "Error", message: "Destination not found!")
+            return 
         }
         
         let directions = MKDirections(request: request)
