@@ -353,22 +353,22 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="kFv-Kh-vZf">
-                                                    <rect key="frame" x="97" y="8" width="54.5" height="69"/>
+                                                    <rect key="frame" x="97" y="8" width="181" height="69"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OUm-ys-bHh">
-                                                            <rect key="frame" x="0.0" y="0.0" width="54.5" height="24.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="181" height="24.5"/>
                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7C9-Oz-gcV">
-                                                            <rect key="frame" x="0.0" y="27.5" width="54.5" height="20"/>
+                                                            <rect key="frame" x="0.0" y="27.5" width="181" height="20"/>
                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBd-Ni-Bqy">
-                                                            <rect key="frame" x="0.0" y="50.5" width="54.5" height="18.5"/>
+                                                            <rect key="frame" x="0.0" y="50.5" width="181" height="18.5"/>
                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -389,6 +389,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="fM5-Fn-7Fu" firstAttribute="centerY" secondItem="bd8-wG-HYM" secondAttribute="centerY" id="0te-hP-RwK"/>
+                                                <constraint firstItem="fM5-Fn-7Fu" firstAttribute="leading" secondItem="kFv-Kh-vZf" secondAttribute="trailing" constant="8" id="1DI-PH-z2t"/>
                                                 <constraint firstItem="kFv-Kh-vZf" firstAttribute="leading" secondItem="vX0-wY-nxI" secondAttribute="trailing" constant="16" id="BJ8-Ny-xLp"/>
                                                 <constraint firstAttribute="trailing" secondItem="fM5-Fn-7Fu" secondAttribute="trailing" constant="8" id="DSF-9i-RRr"/>
                                                 <constraint firstAttribute="trailing" secondItem="fM5-Fn-7Fu" secondAttribute="trailing" constant="8" id="GiI-k6-cG0"/>
