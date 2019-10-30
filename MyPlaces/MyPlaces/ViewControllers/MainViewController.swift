@@ -70,15 +70,17 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let place = places[indexPath.row]
-
-        let deleteAction = UITableViewRowAction(style: .default, title: "Delete") { (_, _) in
+        
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") {  (_, _, _) in
             StorageManager.deleteObject(place)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
+        
+        let swipeAction = UISwipeActionsConfiguration(actions: [deleteAction])
 
-        return [deleteAction]
+        return swipeAction
     }
     
     // MARK: - Navigation
