@@ -91,8 +91,8 @@ class NewPlaceViewController: UITableViewController {
     
     func savePlace() {
 
-        let image = imageIsChanged ? placeImage.image : #imageLiteral(resourceName: "imagePlaceholder")
-        let imageData = image?.pngData()
+        guard let image = imageIsChanged ? placeImage.image : #imageLiteral(resourceName: "imagePlaceholder") else { return }
+        let imageData = image.pngData()
         
         let newPlace = Place(name: placeName.text!,
                              location: placeLocation.text,
@@ -109,7 +109,8 @@ class NewPlaceViewController: UITableViewController {
                 currentPlace?.rating = newPlace.rating
             }
         } else {
-                StorageManager.saveObject(newPlace)
+            CloudManager.saveDataToCloud(place: newPlace, with: image)
+            StorageManager.saveObject(newPlace)
         }
     }
     
@@ -126,7 +127,7 @@ class NewPlaceViewController: UITableViewController {
             placeName.text = currentPlace?.name
             placeLocation.text = currentPlace?.location
             placeType.text = currentPlace?.type
-            ratingControl.rating = Int(currentPlace.rating)
+            ratingControl.rating = currentPlace.rating
             
         }
     }
