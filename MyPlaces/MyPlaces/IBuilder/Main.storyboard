@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Lu3-B7-lW9">
-    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -364,45 +364,57 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="kFv-Kh-vZf">
-                                                    <rect key="frame" x="97" y="8" width="54.5" height="69"/>
+                                                    <rect key="frame" x="97" y="8" width="211" height="69"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OUm-ys-bHh">
-                                                            <rect key="frame" x="0.0" y="0.0" width="54.5" height="24.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="211" height="24.5"/>
                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7C9-Oz-gcV">
-                                                            <rect key="frame" x="0.0" y="27.5" width="54.5" height="20"/>
+                                                            <rect key="frame" x="0.0" y="27.5" width="211" height="20"/>
                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBd-Ni-Bqy">
-                                                            <rect key="frame" x="0.0" y="50.5" width="54.5" height="18.5"/>
+                                                            <rect key="frame" x="0.0" y="50.5" width="211" height="18.5"/>
                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <stackView opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="IQy-rQ-DNs" customClass="RatingControl" customModule="MyPlaces" customModuleProvider="target">
-                                                    <rect key="frame" x="304" y="35" width="90" height="15"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="starCount">
-                                                            <integer key="value" value="5"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="size" keyPath="starSize">
-                                                            <size key="value" width="0.0" height="0.0"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </stackView>
+                                                <view contentMode="scaleToFill" placeholderIntrinsicWidth="90" placeholderIntrinsicHeight="15" translatesAutoresizingMaskIntoConstraints="NO" id="WJe-Nb-qx0">
+                                                    <rect key="frame" x="316" y="35" width="90" height="15"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="IQy-rQ-DNs" customClass="RatingControl" customModule="MyPlaces" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="90" height="15"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="starCount">
+                                                                    <integer key="value" value="5"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="size" keyPath="starSize">
+                                                                    <size key="value" width="0.0" height="0.0"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="90" id="32f-DE-oVI"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="WJe-Nb-qx0" secondAttribute="trailing" constant="8" id="9Dp-zX-JWl"/>
                                                 <constraint firstItem="kFv-Kh-vZf" firstAttribute="leading" secondItem="vX0-wY-nxI" secondAttribute="trailing" constant="16" id="BJ8-Ny-xLp"/>
+                                                <constraint firstItem="WJe-Nb-qx0" firstAttribute="centerY" secondItem="bd8-wG-HYM" secondAttribute="centerY" id="Ixb-Ul-5mw"/>
                                                 <constraint firstItem="vX0-wY-nxI" firstAttribute="centerY" secondItem="bd8-wG-HYM" secondAttribute="centerY" id="QKC-dn-hsH"/>
                                                 <constraint firstAttribute="bottom" secondItem="vX0-wY-nxI" secondAttribute="bottom" constant="8" id="WEl-yC-BDa"/>
+                                                <constraint firstItem="WJe-Nb-qx0" firstAttribute="leading" secondItem="kFv-Kh-vZf" secondAttribute="trailing" constant="8" id="Xlu-Zt-1Sb"/>
                                                 <constraint firstItem="vX0-wY-nxI" firstAttribute="top" secondItem="bd8-wG-HYM" secondAttribute="top" constant="8" id="ZGl-k4-7A4"/>
                                                 <constraint firstItem="vX0-wY-nxI" firstAttribute="leading" secondItem="bd8-wG-HYM" secondAttribute="leading" constant="16" id="g1U-xo-Z0p"/>
                                                 <constraint firstAttribute="bottom" secondItem="kFv-Kh-vZf" secondAttribute="bottom" constant="8" id="sVB-gJ-awc"/>
