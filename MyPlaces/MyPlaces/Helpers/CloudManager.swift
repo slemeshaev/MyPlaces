@@ -33,6 +33,24 @@ class CloudManager {
         }
     }
     
+    static func fetchDataFromCloud(closure: @escaping (Place) -> ()) {
+        
+        let query = CKQuery(recordType: "Place", predicate: NSPredicate(value: true))
+        query.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+        
+        privateCloudDatabase.perform(query, inZoneWith: nil) { (records, error) in
+            guard error == nil else { print(error!); return }
+            guard let records = records else { return }
+            
+            records.forEach({ (record) in
+                let newPlace = Place(record: record)
+                DispatchQueue.main.async {
+                    closure(newPlace)
+                }
+            })
+        }
+    }
+    
     // MARK: Private Methods
     private static func prepareImageToSaveToCloud(place: Place, image: UIImage) -> (CKAsset?, URL?) {
         

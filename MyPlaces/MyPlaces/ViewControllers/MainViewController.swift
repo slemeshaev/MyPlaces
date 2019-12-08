@@ -39,6 +39,11 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         navigationItem.searchController = searchController
         definesPresentationContext = true
         
+        CloudManager.fetchDataFromCloud { (place) in
+            StorageManager.saveObject(place)
+            self.tableView.reloadData()
+        }
+        
     }
 
     // MARK: - Table view data source
