@@ -95,26 +95,25 @@ class CloudManager {
     }
     
     static func getImageFromCloud(place: Place, closure: @escaping (Data?) -> ()) {
+        
         records.forEach { (record) in
-            let fetchRecordOperation = CKFetchRecordsOperation(recordIDs: [record.recordID])
-            fetchRecordOperation.desiredKeys = ["imageData"]
-            fetchRecordOperation.queuePriority = .veryHigh
-            
-            fetchRecordOperation.perRecordCompletionBlock = { record, _, error in
-                guard error == nil else { return }
-                guard let record = record else { return }
-                guard let possibleImage = record.value(forKey: "imageData") as? CKAsset else { return }
-                guard let imageData = try? Data(contentsOf: possibleImage.fileURL!) else { return }
+            if place.recordID == record.recordID.recordName {
+                let fetchRecordOperation = CKFetchRecordsOperation(recordIDs: [record.recordID])
+                fetchRecordOperation.desiredKeys = ["imageData"]
+                fetchRecordOperation.queuePriority = .veryHigh
                 
-                DispatchQueue.main.async {
-                    try! realm.write {
-                        place.imageData = imageData
+                fetchRecordOperation.perRecordCompletionBlock = { record, _, error in
+                    guard error == nil else { return }
+                    guard let record = record else { return }
+                    guard let possibleImage = record.value(forKey: "imageData") as? CKAsset else { return }
+                    guard let imageData = try? Data(contentsOf: possibleImage.fileURL!) else { return }
+                    
+                    DispatchQueue.main.async {
+                        closure(imageData)
                     }
-                    closure(imageData)
                 }
+                privateCloudDatabase.add(fetchRecordOperation)
             }
-            
-            privateCloudDatabase.add(fetchRecordOperation)
         }
     }
     

@@ -42,6 +42,12 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         CloudManager.fetchDataFromCloud(places: places) { (place) in
             StorageManager.saveObject(place)
             self.tableView.reloadData()
+            CloudManager.getImageFromCloud(place: place, closure: { (imageData) in
+                try! realm.write {
+                    place.imageData = imageData
+                }
+                self.tableView.reloadData()
+            })
         }
         
     }
@@ -59,16 +65,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
         
         let place = isFiltering ? filteredPlaces[indexPath.row] : places[indexPath.row]
-        
-        cell.nameLabel.text = place.name
-        cell.locationLabel.text = place.location
-        cell.typeLabel.text = place.type
-        cell.imageOfPlace.image = UIImage(data: place.imageData!)
-        cell.ratingView.rating = place.rating
-        
-        CloudManager.getImageFromCloud(place: place) { (imageData) in
-            cell.imageOfPlace.image = UIImage(data: imageData!)
-        }
+        cell.configureCell(place: place)
         
         return cell
     }

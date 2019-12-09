@@ -24,4 +24,12 @@ class CustomTableViewCell: UITableViewCell {
             //ratingView.settings.updateOnTouch = false
         }
     }
+    
+    func configureCell(place: Place) {
+        nameLabel.text = place.name
+        locationLabel.text = place.location
+        typeLabel.text = place.type
+        imageOfPlace.image = UIImage(data: place.imageData!)
+        ratingView.rating = place.rating
+    }
 }
