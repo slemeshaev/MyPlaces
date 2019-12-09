@@ -8,6 +8,7 @@
 
 import UIKit
 import CloudKit
+import RealmSwift
 
 class CloudManager {
     
@@ -20,6 +21,7 @@ class CloudManager {
         guard let imageAsset = image, let imageURL = url else { return }
         
         let record = CKRecord(recordType: "Place")
+        record.setValue(place.placeID, forKey: "placeID")
         record.setValue(place.name, forKey: "name")
         record.setValue(place.location, forKey: "location")
         record.setValue(place.type, forKey: "type")
@@ -33,7 +35,7 @@ class CloudManager {
         }
     }
     
-    static func fetchDataFromCloud(closure: @escaping (Place) -> ()) {
+    static func fetchDataFromCloud(places: Results<Place>, closure: @escaping (Place) -> ()) {
         
         let query = CKQuery(recordType: "Place", predicate: NSPredicate(value: true))
         query.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
@@ -45,7 +47,9 @@ class CloudManager {
             records.forEach({ (record) in
                 let newPlace = Place(record: record)
                 DispatchQueue.main.async {
-                    closure(newPlace)
+                    if self.newCloudRecordIsAvailable(places: places, placeID: newPlace.placeID) {
+                        closure(newPlace)
+                    }
                 }
             })
         }
@@ -79,4 +83,16 @@ class CloudManager {
             print(error.localizedDescription)
         }
     }
+    
+    private static func newCloudRecordIsAvailable(places: Results<Place>, placeID: String) -> Bool {
+        
+        
+        for place in places {
+            if place.placeID == placeID {
+                return false
+            }
+        }
+        return true
+    }
+    
 }
