@@ -66,6 +66,10 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.imageOfPlace.image = UIImage(data: place.imageData!)
         cell.ratingView.rating = place.rating
         
+        CloudManager.getImageFromCloud(place: place) { (imageData) in
+            cell.imageOfPlace.image = UIImage(data: imageData!)
+        }
+        
         return cell
     }
     
