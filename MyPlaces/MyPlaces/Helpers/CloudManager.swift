@@ -13,6 +13,7 @@ import RealmSwift
 class CloudManager {
     
     private static let privateCloudDatabase = CKContainer.default().publicCloudDatabase
+    private static var records: [CKRecord] = []
     
     static func saveDataToCloud(place: Place, with image: UIImage, clouser: @escaping(String) -> ()) {
         
@@ -42,19 +43,28 @@ class CloudManager {
         let query = CKQuery(recordType: "Place", predicate: NSPredicate(value: true))
         query.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         
-        privateCloudDatabase.perform(query, inZoneWith: nil) { (records, error) in
-            guard error == nil else { print(error!); return }
-            guard let records = records else { return }
+        let queryOperation = CKQueryOperation(query: query)
+        queryOperation.desiredKeys = ["recordID", "placeID", "name", "location", "type", "rating"]
+        queryOperation.queuePriority = .veryHigh
+        
+        queryOperation.recordFetchedBlock = { record in
             
-            records.forEach({ (record) in
-                let newPlace = Place(record: record)
-                DispatchQueue.main.async {
-                    if self.newCloudRecordIsAvailable(places: places, placeID: newPlace.placeID) {
-                        closure(newPlace)
-                    }
+            self.records.append(record)
+            let newPlace = Place(record: record)
+            
+            DispatchQueue.main.async {
+                if newCloudRecordIsAvailable(places: places, placeID: newPlace.placeID) {
+                    closure(newPlace)
                 }
-            })
+            }
         }
+        
+        queryOperation.queryCompletionBlock = { _, error in
+            if let error = error { print(error.localizedDescription); return }
+        }
+        
+        privateCloudDatabase.add(queryOperation)
+        
     }
     
     static func updateCloudData(place: Place, with image: UIImage) {
