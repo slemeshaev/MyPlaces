@@ -57,6 +57,33 @@ class CloudManager {
         }
     }
     
+    static func updateCloudData(place: Place, with image: UIImage) {
+        
+        let recordID = CKRecord.ID(recordName: place.recordID)
+        
+        let (image, url) = prepareImageToSaveToCloud(place: place, image: image)
+        guard let imageAsset = image, let imageURL = url else { return }
+        
+        privateCloudDatabase.fetch(withRecordID: recordID) { (record, error) in
+            if let record = record, error == nil {
+                DispatchQueue.main.async {
+                    record.setValue(place.name, forKey: "name")
+                    record.setValue(place.location, forKey: "location")
+                    record.setValue(place.type, forKey: "type")
+                    record.setValue(place.rating, forKey: "rating")
+                    record.setValue(imageAsset, forKey: "imageData")
+                    
+                    privateCloudDatabase.save(record, completionHandler: { (_, error) in
+                        if let error = error {
+                            print(error.localizedDescription); return
+                        }
+                        deleteTempImage(imageURL: imageURL)
+                    })
+                }
+            }
+        }
+    }
+    
     // MARK: Private Methods
     private static func prepareImageToSaveToCloud(place: Place, image: UIImage) -> (CKAsset?, URL?) {
         
