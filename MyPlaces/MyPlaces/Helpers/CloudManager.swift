@@ -45,6 +45,7 @@ class CloudManager {
         
         let queryOperation = CKQueryOperation(query: query)
         queryOperation.desiredKeys = ["recordID", "placeID", "name", "location", "type", "rating"]
+        queryOperation.resultsLimit = 5
         queryOperation.queuePriority = .veryHigh
         
         queryOperation.recordFetchedBlock = { record in
@@ -59,8 +60,25 @@ class CloudManager {
             }
         }
         
-        queryOperation.queryCompletionBlock = { _, error in
+        queryOperation.queryCompletionBlock = { cursor, error in
             if let error = error { print(error.localizedDescription); return }
+            guard let cursor = cursor else { return }
+            
+            let secondQueryOperation = CKQueryOperation(cursor: cursor)
+            
+            secondQueryOperation.recordFetchedBlock = { record in
+                self.records.append(record)
+                let newPlace = Place(record: record)
+                
+                DispatchQueue.main.async {
+                    if newCloudRecordIsAvailable(places: places, placeID: newPlace.placeID) {
+                        closure(newPlace)
+                    }
+                }
+            }
+            
+            secondQueryOperation.queryCompletionBlock = queryOperation.queryCompletionBlock
+            privateCloudDatabase.add(secondQueryOperation)
         }
         
         privateCloudDatabase.add(queryOperation)
