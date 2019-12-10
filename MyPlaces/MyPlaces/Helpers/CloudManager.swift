@@ -12,7 +12,7 @@ import RealmSwift
 
 class CloudManager {
     
-    private static let privateCloudDatabase = CKContainer.default().publicCloudDatabase
+    private static let privateCloudDatabase = CKContainer.default().privateCloudDatabase
     private static var records: [CKRecord] = []
     
     static func saveDataToCloud(place: Place, with image: UIImage, clouser: @escaping(String) -> ()) {
@@ -132,6 +132,29 @@ class CloudManager {
                 }
                 privateCloudDatabase.add(fetchRecordOperation)
             }
+        }
+    }
+    
+    static func deleteRecord(recordID: String) {
+        
+        let query = CKQuery(recordType: "Place", predicate: NSPredicate(value: true))
+        let queryOperation = CKQueryOperation(query: query)
+        queryOperation.desiredKeys = ["recordID"]
+        queryOperation.queuePriority = .veryHigh
+        
+        queryOperation.recordFetchedBlock = { record in
+            if record.recordID.recordName == recordID {
+                privateCloudDatabase.delete(withRecordID: record.recordID, completionHandler: { (_, error) in
+                    if let error = error { print(error); return }
+                })
+            }
+            
+            queryOperation.queryCompletionBlock = { _, error in
+                if let error = error { print(error); return }
+            }
+            
+            privateCloudDatabase.add(queryOperation)
+            
         }
     }
     

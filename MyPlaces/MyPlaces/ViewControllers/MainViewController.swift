@@ -80,8 +80,13 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let place = places[indexPath.row]
         
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") {  (_, _, _) in
-            StorageManager.deleteObject(place)
-            tableView.deleteRows(at: [indexPath], with: .automatic)
+            
+            self.showAlert(title: "To delete a record?",
+                           message: "This record will be deleted from all your devices", closure: {
+                            CloudManager.deleteRecord(recordID: place.recordID)
+                            StorageManager.deleteObject(place)
+                            tableView.deleteRows(at: [indexPath], with: .automatic)
+            })
         }
         
         let swipeAction = UISwipeActionsConfiguration(actions: [deleteAction])
@@ -134,8 +139,21 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         } else {
             places = places.sorted(byKeyPath: "name", ascending: ascendingSorting)
         }
-        
         tableView.reloadData()
+    }
+    
+    private func showAlert(title: String, message: String, closure: @escaping () -> ()) {
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Delete", style: .destructive) { (_) in
+            closure()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true)
         
     }
     
